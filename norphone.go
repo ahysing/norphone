@@ -43,7 +43,7 @@ func Norphone(word string) string {
 
 	previous := ' '
 	output := make([]rune, 0, outputLength)
-	isFirst := false
+	isFirst := true
 
 	for i := 0; i < len(r); i++ {
 		isLast := i == len(r)-1
@@ -85,7 +85,7 @@ func Norphone(word string) string {
 			case 'G':
 				if 'H' == oneAhead {
 					i++ // 'H' is silent
-				} else if 'J' == oneAhead || 'I' == oneAhead && isFirst {
+				} else if ('J' == oneAhead || 'I' == oneAhead) && isFirst {
 					ch = 'J'
 					i++
 				}
@@ -137,7 +137,7 @@ func Norphone(word string) string {
 				ch = 'V'
 
 			case 'X':
-				output[pos] = 'K'
+				output = append(output, 'K')
 				pos++
 				ch = 'S'
 
@@ -155,7 +155,7 @@ func Norphone(word string) string {
 				ch = 'V'
 
 			case 'X':
-				output[pos] = 'K'
+				output = append(output, 'K')
 				pos++
 				ch = 'S'
 

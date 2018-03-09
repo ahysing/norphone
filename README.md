@@ -1,2 +1,2 @@
-# norphone-go
+# norphone
 Norphone phonetic algorithm ported to go
