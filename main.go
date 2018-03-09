@@ -11,11 +11,13 @@ func usage() {
 }
 
 func main() {
-	if len(os.Args) < 1 {
+	if len(os.Args) < 2 {
 		usage()
 		os.Exit(1)
 	} else {
 		word := os.Args[1]
-		fmt.Println(word)
+		fmt.Println("processing word ", word)
+		soundHash := Norphone(word)
+		fmt.Println(soundHash)
 	}
 }

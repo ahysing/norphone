@@ -1,4 +1,28 @@
-package norphone
+// Norphone
+// Norphone is a nice sound hasher which hashes words. It is designed to produce the same hash for words with similar sound in norwegian.
+//
+// Test suite
+//		Aarrestad & Årrestad => ÅRST
+//		Andreasen & Andreassen => ANDRSN
+//		Arntsen & Arntzen => ARNTSN
+//		Bache & Bakke => BK
+//		Frank & Franck => FRNK
+//		Christian & Kristian => KRSTN
+//		Kielland & Kjelland => XLND
+//		Krogh & Krog => KRG
+//		Krog & Krohg => KRG
+//		Jendal & Jendahl => JNDL
+//		Jendal & Hjendal => JNDL
+//		Jendal & Gjendal => JNDL
+//		Vold & Wold => VL
+//		Thomas & Tomas => TMS
+//		Aamodt & Aamot => ÅMT
+//		Aksel & Axel => AKSL
+//		Kristoffersen & Christophersen => KRSTFRSN
+//		Voll & Vold => VL
+//		Granli & Granlid => GRNL
+//		Gjever & Giever => JVR
+package main
 
 import "strings"
 
@@ -141,7 +165,7 @@ func Norphone(word string) string {
 		}
 
 		if ch != ' ' {
-			output[pos] = ch
+			output = append(output, ch)
 			pos++
 		}
 
