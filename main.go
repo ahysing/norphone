@@ -15,9 +15,11 @@ func main() {
 		usage()
 		os.Exit(1)
 	} else {
-		word := os.Args[1]
-		fmt.Println("processing word ", word)
-		soundHash := Norphone(word)
-		fmt.Println(soundHash)
+		for _, word := range os.Args {
+			soundHash := Norphone(word)
+			fmt.Print(word)
+			fmt.Print(" => ")
+			fmt.Println(soundHash)
+		}
 	}
 }
